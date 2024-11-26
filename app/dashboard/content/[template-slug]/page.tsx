@@ -17,14 +17,9 @@ import { TotalUsageContext } from '@/app/(context)/TotalUsageContext';
 import { UserSubscriptionContext } from '@/app/(context)/UserSubscriptionContext';
 import { UpdateCreditUsageContext } from '@/app/(context)/pdateCreditUsageContent';
 
-interface PROPS{
-    params:{
-        'template-slug':string
-    };
-}
 
-function CreateNewContent(props: PROPS){
-  const params = useParams();
+function CreateNewContent(){
+  const params = useParams() as { 'template-slug': string };
   const router = useRouter();
   const { user } = useUser();
   const [selectedTemplate, setSelectedTemplate] = useState<TEMPLATE | undefined>(undefined);
