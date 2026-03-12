@@ -58,7 +58,7 @@ function CreateNewContent(){
 
     });
 
-    console.log(result)
+    // console.log(result)
   }
 
   useEffect(() => {

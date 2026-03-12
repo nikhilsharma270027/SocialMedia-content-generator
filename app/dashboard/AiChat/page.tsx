@@ -85,10 +85,12 @@ export default function ChatComponent() {
       const result = await chatSession.sendMessage(userInput);  // Sending message to the model
       // console.log(result)
       const botMessage = {
-        text: result.response.candidates[0].content.parts[0].text || "No response",  // Correct path to access the text
-        role: "bot",
-        timestamp: new Date(),
-      };
+  text:
+    result.response.candidates?.[0]?.content?.parts?.[0]?.text ??
+    "No response",
+  role: "bot",
+  timestamp: new Date(),
+};
 
       setMessages((prevMessages) => [...prevMessages, botMessage]);
     } catch (error) {
